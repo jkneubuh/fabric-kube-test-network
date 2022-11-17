@@ -1,0 +1,29 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: registry
+  namespace: registry
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+
+    cert-manager.io/cluster-issuer: ca-issuer
+spec:
+  rules:
+    - host: registry.localho.st
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: registry
+                port:
+                  number: 5000
+  tls:
+    - hosts:
+        - registry.localho.st
+      secretName: registry-tls-cert

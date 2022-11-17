@@ -1,15 +1,20 @@
 #!/bin/bash
-
 #
-# IBM Confidential
-# OCO Source Materials
+# Copyright contributors to the Hyperledgendary Full Stack Asset Transfer project
 #
-# Organic Growth Ventures
-# (C) Copyright IBM Corp. 2022 All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
 #
-# The source code for this program is not published or otherwise
-# divested of its trade secrets, irrespective of what has been
-# deposited with the U.S. Copyright Office.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at:
+#
+# 	  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 #
 
 set -eo pipefail
@@ -19,9 +24,6 @@ KIND_CLUSTER_NAME=kind
 KIND_CLUSTER_IMAGE=${KIND_CLUSTER_IMAGE:-kindest/node:v1.24.4}
 KIND_API_SERVER_ADDRESS=${KIND_API_SERVER_ADDRESS:-127.0.0.1}
 KIND_API_SERVER_PORT=${KIND_API_SERVER_PORT:-8888}
-CONTAINER_REGISTRY_NAME=${CONTAINER_REGISTRY_NAME:-kind-registry}
-CONTAINER_REGISTRY_ADDRESS=${CONTAINER_REGISTRY_ADDRESS:-127.0.0.1}
-CONTAINER_REGISTRY_PORT=${CONTAINER_REGISTRY_PORT:-5000}
 
 function kind_with_nginx() {
 
@@ -34,8 +36,6 @@ function kind_with_nginx() {
   start_nginx
 
   apply_coredns_override
-
-  launch_docker_registry
 }
 
 #
@@ -75,8 +75,9 @@ networking:
 # create a cluster with the local registry enabled in containerd
 containerdConfigPatches:
 - |-
-  [plugins."io.containerd.grpc.v1.cri".registry.mirrors."localhost:${CONTAINER_REGISTRY_PORT}"]
-    endpoint = ["http://${CONTAINER_REGISTRY_NAME}:${CONTAINER_REGISTRY_PORT}"]
+  [plugins."io.containerd.grpc.v1.cri".registry.mirrors."registry.localho.st"]
+    endpoint = ["http://registry.localho.st"]
+
 EOF
 
   #

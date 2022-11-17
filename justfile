@@ -58,12 +58,6 @@ unkind:
     #!/bin/bash
     kind delete cluster --name {{CLUSTER_NAME}}
 
-    if docker inspect kind-registry &>/dev/null; then
-        echo "Stopping container registry"
-        docker kill kind-registry
-        docker rm kind-registry
-    fi
-
 # Launch the operator in the target namespace
 operator:
     scripts/start_operator.sh
