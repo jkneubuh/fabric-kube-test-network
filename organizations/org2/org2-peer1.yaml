@@ -38,8 +38,8 @@ spec:
   images:
     peerInitImage: registry.access.redhat.com/ubi8/ubi-minimal
     peerInitTag: latest
-    peerImage: ghcr.io/hyperledger-labs/k8s-fabric-peer
-    peerTag: "v0.8.0"
+    peerImage: ghcr.io/hyperledger-labs/fabric-builder-k8s/k8s-fabric-peer
+    peerTag: "0.9.3"
     grpcwebImage: ghcr.io/hyperledger-labs/grpc-web
     grpcwebTag: latest
   mspID: Org2MSP
