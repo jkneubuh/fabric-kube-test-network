@@ -44,7 +44,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: org2-peer-gateway.org2.localho.st
+    - host: org2-peer-gateway.org3.fyre.ibm.com
       http:
         paths:
           - backend:
@@ -56,4 +56,4 @@ spec:
             pathType: ImplementationSpecific
   tls:
     - hosts:
-        - org2-peer-gateway.org2.localho.st
+        - org2-peer-gateway.org3.fyre.ibm.com

@@ -22,8 +22,8 @@ metadata:
   name: peer1
 spec:
   version: "${FABRIC_VERSION}"
-  domain: "org2.localho.st"
-  peerExternalEndpoint: "org2-peer1-peer.org2.localho.st:443"
+  domain: "org3.fyre.ibm.com"
+  peerExternalEndpoint: "org2-peer1-peer.org3.fyre.ibm.com:443"
   license:
     accept: true
   action:
@@ -48,7 +48,7 @@ spec:
     enrollment:
       component:
         caname: ca
-        cahost: "org2-ca-ca.org2.localho.st"
+        cahost: "org2-ca-ca.org3.fyre.ibm.com"
         caport: "443"
         catls:
           cacert: "${CA_CERT}"
@@ -56,7 +56,7 @@ spec:
         enrollsecret: "peer1pw"
       tls:
         caname: tlsca
-        cahost: "org2-ca-ca.org2.localho.st"
+        cahost: "org2-ca-ca.org3.fyre.ibm.com"
         caport: "443"
         catls:
           cacert: "${CA_CERT}"
@@ -66,7 +66,7 @@ spec:
           hosts:
             - "peer1"
             - "peer1.org2.svc.cluster.local"
-            - "org2-peer-gateway.org2.localho.st"
+            - "org2-peer-gateway.org3.fyre.ibm.com"
   chaincodeBuilderConfig:
     peername: org2-peer1
   service:

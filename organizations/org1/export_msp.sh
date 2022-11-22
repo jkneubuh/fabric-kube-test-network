@@ -30,7 +30,7 @@ print "Exporting org1 channel MSP"
 # Prepare a folder structure containing the organization's MSP certificates
 # necessary to join the consortium.
 #
-ORG_MSP_DIR=channel-config/organizations/peerOrganizations/org1.localho.st/msp
+ORG_MSP_DIR=channel-config/organizations/peerOrganizations/org2.fyre.ibm.com/msp
 
 write_pem ca .ca.signcerts $ORG_MSP_DIR/cacerts/ca-signcert.pem
 write_pem ca .tlsca.signcerts $ORG_MSP_DIR/tlscacerts/tlsca-signcert.pem

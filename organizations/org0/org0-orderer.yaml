@@ -22,7 +22,7 @@ metadata:
   name: orderer
 spec:
   version: "${FABRIC_VERSION}"
-  domain: "org0.localho.st"
+  domain: "org1.fyre.ibm.com"
   license:
     accept: true
   action:
@@ -43,7 +43,7 @@ spec:
     - enrollment:
         component:
           caname: ca
-          cahost: org0-ca-ca.org0.localho.st
+          cahost: org0-ca-ca.org1.fyre.ibm.com
           caport: "443"
           catls:
             cacert: "${CA_CERT}"
@@ -51,7 +51,7 @@ spec:
           enrollsecret: "orderer1pw"
         tls:
           caname: tlsca
-          cahost: org0-ca-ca.org0.localho.st
+          cahost: org0-ca-ca.org1.fyre.ibm.com
           caport: "443"
           catls:
             cacert: "${CA_CERT}"
@@ -64,7 +64,7 @@ spec:
     - enrollment:
         component:
           caname: ca
-          cahost: org0-ca-ca.org0.localho.st
+          cahost: org0-ca-ca.org1.fyre.ibm.com
           caport: "443"
           catls:
             cacert: "${CA_CERT}"
@@ -72,7 +72,7 @@ spec:
           enrollsecret: "orderer2pw"
         tls:
           caname: tlsca
-          cahost: org0-ca-ca.org0.localho.st
+          cahost: org0-ca-ca.org1.fyre.ibm.com
           caport: "443"
           catls:
             cacert: "${CA_CERT}"
@@ -85,7 +85,7 @@ spec:
     - enrollment:
         component:
           caname: ca
-          cahost: org0-ca-ca.org0.localho.st
+          cahost: org0-ca-ca.org1.fyre.ibm.com
           caport: "443"
           catls:
             cacert: "${CA_CERT}"
@@ -93,7 +93,7 @@ spec:
           enrollsecret: "orderer3pw"
         tls:
           caname: tlsca
-          cahost: org0-ca-ca.org0.localho.st
+          cahost: org0-ca-ca.org1.fyre.ibm.com
           caport: "443"
           catls:
             cacert: "${CA_CERT}"

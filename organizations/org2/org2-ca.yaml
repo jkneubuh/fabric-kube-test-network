@@ -77,7 +77,7 @@ spec:
           expiry: 87600h0m0s
   customNames:
     pvc: {}
-  domain: org2.localho.st
+  domain: org3.fyre.ibm.com
   images:
     caImage: hyperledger/fabric-ca
     caTag: 1.5.5
