@@ -125,7 +125,7 @@ Organizations:
       # AnchorPeers defines the location of peers which can be used
       # for cross org gossip communication.  Note, this value is only
       # encoded in the genesis block in the Application section context
-      - Host: org2-peer1.org3.fyre.ibm.com
+      - Host: org2-peer1-peer.org3.fyre.ibm.com
         Port: 443
 
 ################################################################################
@@ -240,11 +240,11 @@ Orderer: &OrdererDefaults
         ClientTLSCert: ../organizations/ordererOrganizations/org1.fyre.ibm.com/orderers/orderernode1/tls/signcerts/tls-cert.pem
         ServerTLSCert: ../organizations/ordererOrganizations/org1.fyre.ibm.com/orderers/orderernode1/tls/signcerts/tls-cert.pem
       - Host: org0-orderernode2-orderer.org1.fyre.ibm.com
-        Port: 7050
+        Port: 443
         ClientTLSCert: ../organizations/ordererOrganizations/org1.fyre.ibm.com/orderers/orderernode2/tls/signcerts/tls-cert.pem
         ServerTLSCert: ../organizations/ordererOrganizations/org1.fyre.ibm.com/orderers/orderernode2/tls/signcerts/tls-cert.pem
       - Host: org0-orderernode3-orderer.org1.fyre.ibm.com
-        Port: 7050
+        Port: 443
         ClientTLSCert: ../organizations/ordererOrganizations/org1.fyre.ibm.com/orderers/orderernode3/tls/signcerts/tls-cert.pem
         ServerTLSCert: ../organizations/ordererOrganizations/org1.fyre.ibm.com/orderers/orderernode3/tls/signcerts/tls-cert.pem
 
