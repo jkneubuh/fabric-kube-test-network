@@ -98,7 +98,7 @@ function org1_cas_ready() {
 }
 
 function org2_cas_ready() {
-  curl --fail -s --cacert organizations/org2/enrollments/ca-tls-cert.pem https://org2-ca-ca.org3.fyre.ibm.com/cainfo
+  curl --fail -s --cacert organizations/org2/enrollments/ca-tls-cert.pem https://org2-ca-ca.trader3.fyre.ibm.com/cainfo
 }
 
 function channel_msp() {
