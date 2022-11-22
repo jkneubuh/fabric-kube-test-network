@@ -38,7 +38,7 @@ Organizations:
     ID: OrdererMSP
 
     # MSPDir is the filesystem path which contains the MSP configuration
-    MSPDir: ../organizations/ordererOrganizations/org1.fyre.ibm.com/msp
+    MSPDir: ../organizations/ordererOrganizations/trader1.fyre.ibm.com/msp
 
     # Policies defines the set of policies at this level of the config tree
     # For organization policies, their canonical path is usually
@@ -55,9 +55,9 @@ Organizations:
         Rule: "OR('OrdererMSP.admin')"
 
     OrdererEndpoints:
-      - org0-orderernode1-orderer.org1.fyre.ibm.com:443
-      - org0-orderernode2-orderer.org1.fyre.ibm.com:443
-      - org0-orderernode3-orderer.org1.fyre.ibm.com:443
+      - org0-orderernode1-orderer.trader1.fyre.ibm.com:443
+      - org0-orderernode2-orderer.trader1.fyre.ibm.com:443
+      - org0-orderernode3-orderer.trader1.fyre.ibm.com:443
 
   - &Org1
     # DefaultOrg defines the organization which is used in the sampleconfig
@@ -67,7 +67,7 @@ Organizations:
     # ID to load the MSP definition as
     ID: Org1MSP
 
-    MSPDir: ../organizations/peerOrganizations/org2.fyre.ibm.com/msp
+    MSPDir: ../organizations/peerOrganizations/trader2.fyre.ibm.com/msp
 
     # Policies defines the set of policies at this level of the config tree
     # For organization policies, their canonical path is usually
@@ -91,7 +91,7 @@ Organizations:
       # AnchorPeers defines the location of peers which can be used
       # for cross org gossip communication.  Note, this value is only
       # encoded in the genesis block in the Application section context
-      - Host: org1-peer1-peer.org2.fyre.ibm.com
+      - Host: org1-peer1-peer.trader2.fyre.ibm.com
         Port: 443
 
   - &Org2
@@ -102,7 +102,7 @@ Organizations:
     # ID to load the MSP definition as
     ID: Org2MSP
 
-    MSPDir: ../organizations/peerOrganizations/org3.fyre.ibm.com/msp
+    MSPDir: ../organizations/peerOrganizations/trader3.fyre.ibm.com/msp
 
     # Policies defines the set of policies at this level of the config tree
     # For organization policies, their canonical path is usually
@@ -125,7 +125,7 @@ Organizations:
       # AnchorPeers defines the location of peers which can be used
       # for cross org gossip communication.  Note, this value is only
       # encoded in the genesis block in the Application section context
-      - Host: org2-peer1-peer.org3.fyre.ibm.com
+      - Host: org2-peer1-peer.trader3.fyre.ibm.com
         Port: 443
 
 ################################################################################
@@ -235,18 +235,18 @@ Orderer: &OrdererDefaults
 
   EtcdRaft:
     Consenters:
-      - Host: org0-orderernode1-orderer.org1.fyre.ibm.com
+      - Host: org0-orderernode1-orderer.trader1.fyre.ibm.com
         Port: 443
-        ClientTLSCert: ../organizations/ordererOrganizations/org1.fyre.ibm.com/orderers/orderernode1/tls/signcerts/tls-cert.pem
-        ServerTLSCert: ../organizations/ordererOrganizations/org1.fyre.ibm.com/orderers/orderernode1/tls/signcerts/tls-cert.pem
-      - Host: org0-orderernode2-orderer.org1.fyre.ibm.com
+        ClientTLSCert: ../organizations/ordererOrganizations/trader1.fyre.ibm.com/orderers/orderernode1/tls/signcerts/tls-cert.pem
+        ServerTLSCert: ../organizations/ordererOrganizations/trader1.fyre.ibm.com/orderers/orderernode1/tls/signcerts/tls-cert.pem
+      - Host: org0-orderernode2-orderer.trader1.fyre.ibm.com
         Port: 443
-        ClientTLSCert: ../organizations/ordererOrganizations/org1.fyre.ibm.com/orderers/orderernode2/tls/signcerts/tls-cert.pem
-        ServerTLSCert: ../organizations/ordererOrganizations/org1.fyre.ibm.com/orderers/orderernode2/tls/signcerts/tls-cert.pem
-      - Host: org0-orderernode3-orderer.org1.fyre.ibm.com
+        ClientTLSCert: ../organizations/ordererOrganizations/trader1.fyre.ibm.com/orderers/orderernode2/tls/signcerts/tls-cert.pem
+        ServerTLSCert: ../organizations/ordererOrganizations/trader1.fyre.ibm.com/orderers/orderernode2/tls/signcerts/tls-cert.pem
+      - Host: org0-orderernode3-orderer.trader1.fyre.ibm.com
         Port: 443
-        ClientTLSCert: ../organizations/ordererOrganizations/org1.fyre.ibm.com/orderers/orderernode3/tls/signcerts/tls-cert.pem
-        ServerTLSCert: ../organizations/ordererOrganizations/org1.fyre.ibm.com/orderers/orderernode3/tls/signcerts/tls-cert.pem
+        ClientTLSCert: ../organizations/ordererOrganizations/trader1.fyre.ibm.com/orderers/orderernode3/tls/signcerts/tls-cert.pem
+        ServerTLSCert: ../organizations/ordererOrganizations/trader1.fyre.ibm.com/orderers/orderernode3/tls/signcerts/tls-cert.pem
 
 
     # Options to be specified for all the etcd/raft nodes. The values here

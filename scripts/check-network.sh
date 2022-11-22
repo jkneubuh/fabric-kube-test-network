@@ -90,11 +90,11 @@ function org2_deployments() {
 
 # Hit the CAs using the TLS certs, etc.
 function org0_cas_ready() {
-  curl --fail -s --cacert organizations/org0/enrollments/ca-tls-cert.pem https://org0-ca-ca.org1.fyre.ibm.com/cainfo
+  curl --fail -s --cacert organizations/org0/enrollments/ca-tls-cert.pem https://org0-ca-ca.trader1.fyre.ibm.com/cainfo
 }
 
 function org1_cas_ready() {
-  curl --fail -s --cacert organizations/org1/enrollments/ca-tls-cert.pem https://org1-ca-ca.org2.fyre.ibm.com/cainfo
+  curl --fail -s --cacert organizations/org1/enrollments/ca-tls-cert.pem https://org1-ca-ca.trader2.fyre.ibm.com/cainfo
 }
 
 function org2_cas_ready() {
