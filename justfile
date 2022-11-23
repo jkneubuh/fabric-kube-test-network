@@ -120,6 +120,7 @@ destroy:
     kubectl delete ns org0 --ignore-not-found=true
     kubectl delete ns org1 --ignore-not-found=true
     kubectl delete ns org2 --ignore-not-found=true
+    kubectl delete ns org3 --ignore-not-found=true
 
 
 # Check that all network services are running

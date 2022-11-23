@@ -36,6 +36,9 @@ subjects:
   - kind: ServiceAccount
     name: fabric-operator
     namespace: org2
+  - kind: ServiceAccount
+    name: fabric-operator
+    namespace: org3
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole

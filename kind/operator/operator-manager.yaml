@@ -63,4 +63,6 @@ spec:
               value: "fabric-operator"
             - name: CLUSTERTYPE
               value: K8S
+            - name: OPERATOR_LOCAL_MODE
+              value: "true"
 
