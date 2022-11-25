@@ -20,7 +20,7 @@ set -euo pipefail
 . scripts/utils.sh
 
 GENESIS_BLOCK=${CHANNEL_NAME}_genesis_block.pb
-CHANNEL_CONFIG=channel-config/config/configtx-multi-namespace.yaml
+CHANNEL_CONFIG=channel-config/config/configtx.yaml
 
 print "Creating channel-config/$GENESIS_BLOCK from $CHANNEL_CONFIG"
 

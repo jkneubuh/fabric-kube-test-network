@@ -38,7 +38,7 @@ Organizations:
     ID: OrdererMSP
 
     # MSPDir is the filesystem path which contains the MSP configuration
-    MSPDir: ../organizations/ordererOrganizations/org0.localho.st/msp
+    MSPDir: ../organizations/ordererOrganizations/media1.fyre.ibm.com/msp
 
     # Policies defines the set of policies at this level of the config tree
     # For organization policies, their canonical path is usually
@@ -55,9 +55,9 @@ Organizations:
         Rule: "OR('OrdererMSP.admin')"
 
     OrdererEndpoints:
-      - orderernode1.org0.svc.cluster.local:7050
-      - orderernode2.org0.svc.cluster.local:7050
-      - orderernode3.org0.svc.cluster.local:7050
+      - org0-orderernode1-orderer.media1.fyre.ibm.com:443
+      - org0-orderernode2-orderer.media1.fyre.ibm.com:443
+      - org0-orderernode3-orderer.media1.fyre.ibm.com:443
 
   - &Org1
     # DefaultOrg defines the organization which is used in the sampleconfig
@@ -67,7 +67,7 @@ Organizations:
     # ID to load the MSP definition as
     ID: Org1MSP
 
-    MSPDir: ../organizations/peerOrganizations/org1.localho.st/msp
+    MSPDir: ../organizations/peerOrganizations/media2.fyre.ibm.com/msp
 
     # Policies defines the set of policies at this level of the config tree
     # For organization policies, their canonical path is usually
@@ -91,8 +91,8 @@ Organizations:
       # AnchorPeers defines the location of peers which can be used
       # for cross org gossip communication.  Note, this value is only
       # encoded in the genesis block in the Application section context
-      - Host: peer1.org1.svc.cluster.local
-        Port: 7051
+      - Host: org1-peer1-peer.media2.fyre.ibm.com
+        Port: 443
 
   - &Org2
     # DefaultOrg defines the organization which is used in the sampleconfig
@@ -102,7 +102,7 @@ Organizations:
     # ID to load the MSP definition as
     ID: Org2MSP
 
-    MSPDir: ../organizations/peerOrganizations/org2.localho.st/msp
+    MSPDir: ../organizations/peerOrganizations/media3.fyre.ibm.com/msp
 
     # Policies defines the set of policies at this level of the config tree
     # For organization policies, their canonical path is usually
@@ -125,8 +125,8 @@ Organizations:
       # AnchorPeers defines the location of peers which can be used
       # for cross org gossip communication.  Note, this value is only
       # encoded in the genesis block in the Application section context
-      - Host: peer1.org2.svc.cluster.local
-        Port: 7051
+      - Host: org2-peer1-peer.media3.fyre.ibm.com
+        Port: 443
 
 ################################################################################
 #
@@ -235,18 +235,18 @@ Orderer: &OrdererDefaults
 
   EtcdRaft:
     Consenters:
-      - Host: orderernode1.org0.svc.cluster.local
-        Port: 7050
-        ClientTLSCert: ../organizations/ordererOrganizations/org0.localho.st/orderers/orderernode1/tls/signcerts/tls-cert.pem
-        ServerTLSCert: ../organizations/ordererOrganizations/org0.localho.st/orderers/orderernode1/tls/signcerts/tls-cert.pem
-      - Host: orderernode2.org0.svc.cluster.local
-        Port: 7050
-        ClientTLSCert: ../organizations/ordererOrganizations/org0.localho.st/orderers/orderernode2/tls/signcerts/tls-cert.pem
-        ServerTLSCert: ../organizations/ordererOrganizations/org0.localho.st/orderers/orderernode2/tls/signcerts/tls-cert.pem
-      - Host: orderernode3.org0.svc.cluster.local
-        Port: 7050
-        ClientTLSCert: ../organizations/ordererOrganizations/org0.localho.st/orderers/orderernode3/tls/signcerts/tls-cert.pem
-        ServerTLSCert: ../organizations/ordererOrganizations/org0.localho.st/orderers/orderernode3/tls/signcerts/tls-cert.pem
+      - Host: org0-orderernode1-orderer.media1.fyre.ibm.com
+        Port: 443
+        ClientTLSCert: ../organizations/ordererOrganizations/media1.fyre.ibm.com/orderers/orderernode1/tls/signcerts/tls-cert.pem
+        ServerTLSCert: ../organizations/ordererOrganizations/media1.fyre.ibm.com/orderers/orderernode1/tls/signcerts/tls-cert.pem
+      - Host: org0-orderernode2-orderer.media1.fyre.ibm.com
+        Port: 443
+        ClientTLSCert: ../organizations/ordererOrganizations/media1.fyre.ibm.com/orderers/orderernode2/tls/signcerts/tls-cert.pem
+        ServerTLSCert: ../organizations/ordererOrganizations/media1.fyre.ibm.com/orderers/orderernode2/tls/signcerts/tls-cert.pem
+      - Host: org0-orderernode3-orderer.media1.fyre.ibm.com
+        Port: 443
+        ClientTLSCert: ../organizations/ordererOrganizations/media1.fyre.ibm.com/orderers/orderernode3/tls/signcerts/tls-cert.pem
+        ServerTLSCert: ../organizations/ordererOrganizations/media1.fyre.ibm.com/orderers/orderernode3/tls/signcerts/tls-cert.pem
 
 
     # Options to be specified for all the etcd/raft nodes. The values here
