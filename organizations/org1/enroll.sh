@@ -40,7 +40,7 @@ write_pem ca .tls.cert $ENROLLMENTS_DIR/ca-tls-cert.pem
 enroll org1 org1admin org1adminpw
 
 # create an msp config.yaml to indicate the user is an admin for the org
-CA_CERT_NAME=org1-ca-ca-trader2-fyre-ibm-com-ca.pem
+CA_CERT_NAME=org1-ca-ca-media2-fyre-ibm-com-ca.pem
 write_msp_config ca $CA_CERT_NAME $ENROLLMENTS_DIR/org1admin/msp
 
 # Enroll the root CA administrator such that users can later be registered and enrolled for
