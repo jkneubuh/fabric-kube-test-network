@@ -54,9 +54,6 @@ spec:
           - name: peer2
             pass: peer2pw
             type: peer
-          - name: orderer1
-            pass: orderer1pw
-            type: orderer
       debug: true
       signing:
         default:
@@ -74,9 +71,6 @@ spec:
           - name: peer2
             pass: peer2pw
             type: peer
-          - name: orderer1
-            pass: orderer1pw
-            type: orderer
       debug: true
       signing:
         default:

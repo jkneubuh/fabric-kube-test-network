@@ -94,9 +94,6 @@ Organizations:
       - Host: org1-peer1-peer.media2.fyre.ibm.com
         Port: 443
 
-    OrdererEndpoints:
-      - org1-orderernode1-orderer.media2.fyre.ibm.com:443
-
   - &Org2
     # DefaultOrg defines the organization which is used in the sampleconfig
     # of the fabric.git development environment
@@ -130,9 +127,6 @@ Organizations:
       # encoded in the genesis block in the Application section context
       - Host: org2-peer1-peer.media3.fyre.ibm.com
         Port: 443
-
-    OrdererEndpoints:
-      - org2-orderernode1-orderer.media3.fyre.ibm.com:443
 
 ################################################################################
 #
@@ -254,15 +248,6 @@ Orderer: &OrdererDefaults
         ClientTLSCert: ../organizations/ordererOrganizations/media1.fyre.ibm.com/orderers/orderernode3/tls/signcerts/tls-cert.pem
         ServerTLSCert: ../organizations/ordererOrganizations/media1.fyre.ibm.com/orderers/orderernode3/tls/signcerts/tls-cert.pem
 
-      - Host: org1-orderernode1-orderer.media2.fyre.ibm.com
-        Port: 443
-        ClientTLSCert: ../organizations/ordererOrganizations/media2.fyre.ibm.com/orderers/orderernode1/tls/signcerts/tls-cert.pem
-        ServerTLSCert: ../organizations/ordererOrganizations/media2.fyre.ibm.com/orderers/orderernode1/tls/signcerts/tls-cert.pem
-
-      - Host: org2-orderernode1-orderer.media3.fyre.ibm.com
-        Port: 443
-        ClientTLSCert: ../organizations/ordererOrganizations/media3.fyre.ibm.com/orderers/orderernode1/tls/signcerts/tls-cert.pem
-        ServerTLSCert: ../organizations/ordererOrganizations/media3.fyre.ibm.com/orderers/orderernode1/tls/signcerts/tls-cert.pem
 
     # Options to be specified for all the etcd/raft nodes. The values here
     # are the defaults for all new channels and can be modified on a
