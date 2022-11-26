@@ -41,6 +41,4 @@ write_msp_config ca ca-signcert.pem $ORG_DIR/msp
 # Extract the orderer TLS certificates.  These will be used by osnadmin for
 # TLS connections to the orderers when joining orgs to a channel.
 #
-ORG_DIR=channel-config/organizations/ordererOrganizations/media2.fyre.ibm.com
-
 write_pem orderernode1 .tls.signcerts $ORG_DIR/orderers/orderernode1/tls/signcerts/tls-cert.pem
