@@ -42,6 +42,11 @@ export CA_CERT=$(connection_profile_cert ca .tls.cert)
 # Network nodes
 #
 print "starting org1 orderers"
+apply_template organizations/org1/org1-orderer.yaml
+sleep 5
+
+wait_for ibporderer orderernode1
+
 
 print "starting org1 peers"
 

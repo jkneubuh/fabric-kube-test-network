@@ -140,7 +140,7 @@ enroll org:
 ###############################################################################
 
 # Create the channel genesis block
-create-genesis-block: check-network gather-msp
+create-genesis-block:
     channel-config/create_genesis_block.sh
 
 # todo: include this?  Which org is running the target?

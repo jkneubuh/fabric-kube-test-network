@@ -24,6 +24,42 @@ set -euo pipefail
 #
 export NAMESPACE=org2
 
+
+function join_orderer() {
+  local orderer=$1
+  print "joining orderer $orderer to $CHANNEL_NAME"
+
+  # orderer URL and TLS certificate:
+  local orderer_admin_endpoint=org2-${orderer}-admin.media3.fyre.ibm.com
+  local ca_file=channel-config/organizations/ordererOrganizations/media3.fyre.ibm.com/orderers/${orderer}/tls/signcerts/tls-cert.pem
+
+  # mTLS client key pair enrolled the org2 TLS CA:
+  local client_cert=organizations/org2/enrollments/org2admin/tls/signcerts/cert.pem
+  local client_key=organizations/org2/enrollments/org2admin/tls/keystore/key.pem
+
+  osnadmin channel join \
+    --orderer-address $orderer_admin_endpoint \
+    --ca-file         $ca_file \
+    --client-cert     $client_cert \
+    --client-key      $client_key \
+    --channelID       $CHANNEL_NAME \
+    --config-block    channel-config/${CHANNEL_NAME}_genesis_block.pb
+}
+
+join_orderer orderernode1
+
+
+
+
+
+
+
+
+
+
+
+
+
 #
 # Join peer1 to the channel
 #
