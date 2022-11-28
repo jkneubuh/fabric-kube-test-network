@@ -43,6 +43,10 @@ enroll org1 org1admin org1adminpw
 CA_CERT_NAME=org1-ca-ca-garboard2-fyre-ibm-com-ca.pem
 write_msp_config ca $CA_CERT_NAME $ENROLLMENTS_DIR/org1admin/msp
 
+# When connecting to the orderers, the channel admin API requires that the HTTP client
+# presents a TLS certificate that has been signed by the organization's TLS CA.
+enroll_tls org1 org1admin org1adminpw
+
 # Enroll the root CA administrator such that users can later be registered and enrolled for
 # identities of transactions submitted to the ledger.
 enroll org1 rcaadmin rcaadminpw

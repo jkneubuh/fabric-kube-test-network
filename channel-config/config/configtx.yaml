@@ -382,6 +382,8 @@ Profiles:
       <<: *OrdererDefaults
       Organizations:
         - *OrdererOrg
+        - *Org1
+        - *Org2
       Capabilities: *OrdererCapabilities
     Application:
       <<: *ApplicationDefaults
