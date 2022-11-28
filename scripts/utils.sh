@@ -153,6 +153,6 @@ function appear_as() {
   export CORE_PEER_CLIENT_CONNTIMEOUT=15s
   export CORE_PEER_DELIVERYCLIENT_CONNTIMEOUT=15s
 
-  export ORDERER_ENDPOINT=org0-orderernode1-orderer.media1.fyre.ibm.com:443
-  export ORDERER_TLS_CERT=${PWD}/channel-config/organizations/ordererOrganizations/media1.fyre.ibm.com/orderers/orderernode1/tls/signcerts/tls-cert.pem
+  export ORDERER_ENDPOINT=org0-orderernode1-orderer.garboard1.fyre.ibm.com:443
+  export ORDERER_TLS_CERT=${PWD}/channel-config/organizations/ordererOrganizations/garboard1.fyre.ibm.com/orderers/orderernode1/tls/signcerts/tls-cert.pem
 }

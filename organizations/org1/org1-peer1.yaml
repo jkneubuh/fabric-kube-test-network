@@ -22,8 +22,8 @@ metadata:
   name: peer1
 spec:
   version: "${FABRIC_VERSION}"
-  domain: "media2.fyre.ibm.com"
-  peerExternalEndpoint: "org1-peer1-peer.media2.fyre.ibm.com:443"
+  domain: "garboard2.fyre.ibm.com"
+  peerExternalEndpoint: "org1-peer1-peer.garboard2.fyre.ibm.com:443"
   license:
     accept: true
   action:
@@ -48,7 +48,7 @@ spec:
     enrollment:
       component:
         caname: ca
-        cahost: "org1-ca-ca.media2.fyre.ibm.com"
+        cahost: "org1-ca-ca.garboard2.fyre.ibm.com"
         caport: "443"
         catls:
           cacert: "${CA_CERT}"
@@ -56,7 +56,7 @@ spec:
         enrollsecret: "peer1pw"
       tls:
         caname: tlsca
-        cahost: "org1-ca-ca.media2.fyre.ibm.com"
+        cahost: "org1-ca-ca.garboard2.fyre.ibm.com"
         caport: "443"
         catls:
           cacert: "${CA_CERT}"
@@ -66,7 +66,7 @@ spec:
           hosts:
             - "peer1"
             - "peer1.org1.svc.cluster.local"
-            - "org1-peer-gateway.media2.fyre.ibm.com"
+            - "org1-peer-gateway.garboard2.fyre.ibm.com"
   chaincodeBuilderConfig:
     peername: org1-peer1
   service:

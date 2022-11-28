@@ -22,7 +22,7 @@ metadata:
   name: orderer
 spec:
   version: "${FABRIC_VERSION}"
-  domain: "media3.fyre.ibm.com"
+  domain: "garboard3.fyre.ibm.com"
   license:
     accept: true
   action:
@@ -37,7 +37,7 @@ spec:
     - enrollment:
         component:
           caname: ca
-          cahost: org2-ca-ca.media3.fyre.ibm.com
+          cahost: org2-ca-ca.garboard3.fyre.ibm.com
           caport: "443"
           catls:
             cacert: "${CA_CERT}"
@@ -45,7 +45,7 @@ spec:
           enrollsecret: "orderer1pw"
         tls:
           caname: tlsca
-          cahost: org2-ca-ca.media3.fyre.ibm.com
+          cahost: org2-ca-ca.garboard3.fyre.ibm.com
           caport: "443"
           catls:
             cacert: "${CA_CERT}"

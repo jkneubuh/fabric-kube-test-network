@@ -30,7 +30,7 @@ print "Exporting org2 channel MSP"
 # Prepare a folder structure containing the organization's MSP certificates
 # necessary to join the consortium.
 #
-ORG_DIR=channel-config/organizations/peerOrganizations/media3.fyre.ibm.com
+ORG_DIR=channel-config/organizations/peerOrganizations/garboard3.fyre.ibm.com
 
 write_pem ca .ca.signcerts $ORG_DIR/msp/cacerts/ca-signcert.pem
 write_pem ca .tlsca.signcerts $ORG_DIR/msp/tlscacerts/tlsca-signcert.pem
@@ -41,6 +41,6 @@ write_msp_config ca ca-signcert.pem $ORG_DIR/msp
 # Extract the orderer TLS certificates.  These will be used by osnadmin for
 # TLS connections to the orderers when joining orgs to a channel.
 #
-ORG_DIR=channel-config/organizations/ordererOrganizations/media3.fyre.ibm.com
+ORG_DIR=channel-config/organizations/ordererOrganizations/garboard3.fyre.ibm.com
 
 write_pem orderernode1 .tls.signcerts $ORG_DIR/orderers/orderernode1/tls/signcerts/tls-cert.pem

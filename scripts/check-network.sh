@@ -90,15 +90,15 @@ function org2_deployments() {
 
 # Hit the CAs using the TLS certs, etc.
 function org0_cas_ready() {
-  curl --fail -s --cacert organizations/org0/enrollments/ca-tls-cert.pem https://org0-ca-ca.media1.fyre.ibm.com/cainfo
+  curl --fail -s --cacert organizations/org0/enrollments/ca-tls-cert.pem https://org0-ca-ca.garboard1.fyre.ibm.com/cainfo
 }
 
 function org1_cas_ready() {
-  curl --fail -s --cacert organizations/org1/enrollments/ca-tls-cert.pem https://org1-ca-ca.media2.fyre.ibm.com/cainfo
+  curl --fail -s --cacert organizations/org1/enrollments/ca-tls-cert.pem https://org1-ca-ca.garboard2.fyre.ibm.com/cainfo
 }
 
 function org2_cas_ready() {
-  curl --fail -s --cacert organizations/org2/enrollments/ca-tls-cert.pem https://org2-ca-ca.media3.fyre.ibm.com/cainfo
+  curl --fail -s --cacert organizations/org2/enrollments/ca-tls-cert.pem https://org2-ca-ca.garboard3.fyre.ibm.com/cainfo
 }
 
 function channel_msp() {

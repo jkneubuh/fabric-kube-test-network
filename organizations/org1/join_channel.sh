@@ -31,8 +31,8 @@ function join_orderer() {
   print "joining orderer $orderer to $CHANNEL_NAME"
 
   # orderer URL and TLS certificate:
-  local orderer_admin_endpoint=org1-${orderer}-admin.media2.fyre.ibm.com
-  local ca_file=channel-config/organizations/ordererOrganizations/media2.fyre.ibm.com/orderers/${orderer}/tls/signcerts/tls-cert.pem
+  local orderer_admin_endpoint=org1-${orderer}-admin.garboard2.fyre.ibm.com
+  local ca_file=channel-config/organizations/ordererOrganizations/garboard2.fyre.ibm.com/orderers/${orderer}/tls/signcerts/tls-cert.pem
 
   # mTLS client key pair enrolled the org1 TLS CA:
   local client_cert=organizations/org1/enrollments/org1admin/tls/signcerts/cert.pem
